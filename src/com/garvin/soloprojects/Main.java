@@ -1,15 +1,24 @@
 package com.garvin.soloprojects;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         implementation i = new implementation();
-        i.push(1);
-        i.push(2);
-        i.push(3);
-        i.push(4);
-        i.push(5);
-        System.out.println(i.peek());
-        System.out.println(i.pop());
-        System.out.println(i.peek());
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("1.Push \n2.Pop \n3. Peek \n4.Exit");
+            switch (sc.nextInt()) {
+                case 1 -> {
+                    System.out.println("Enter int to push");
+                    int item = sc.nextInt();
+                    i.push(item);
+                }
+                case 2 -> System.out.println("Popped: " + i.pop());
+                case 3 -> System.out.println("Element At Top(Peek): " + i.peek());
+                case 4 -> System.exit(0);
+            }
+
+        }
     }
 }
